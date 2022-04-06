@@ -1,0 +1,49 @@
+Nên tạo 1 thư mục gốc để lưu trữ các dữ liệu
+của từng buổi học
+VD: php0422e2 /
+              /Day01_PHP_Environment_Basic/
+                                          /Code_demo: chứa các code mẫu trên lớp
+                                                    /Draft: chứa các code mẫu của buổi học tương ứng
+                                          /Slides: chứa các slide tương ứng của buổi học
+                                          /Bai_tap_ve_nha: chứa file bài tập nếu có
+- Link Git của lớp: https://github.com/nguyenvietmanhit/php0422e2
+- Tìm hiểu thêm về Git - là công cụ giúp quản lý
+source code và làm việc nhóm 1 cách hiệu quả
+- Cài XAMPP
+- Môi trường phát triển Web:
++ Web Server: là 1 thư mục nào đó trên server, chứa
+code PHP, 2 phần mềm chạy webserver thông dụng nhất
+là Apache và Nginx
++ PHP Engine: dùng để xử lý code PHP
++ Cơ sở dữ liệu: là nơi trữ dữ liệu, lưu lại các thông
+tin của user khi trải nghiệm website của bạn, giúp
+web là web động. VD: MySQL, SQL Server, Oracle, SQLite,
+MongoDB ..
+-> cài thủ công sẽ rất phức tạp với beginner
+-> cài các phần mềm hỗ trợ cài sẵn luôn 3 thành phần
+trên: XAMPP, WAMPP, LAMP
+Docker (Window, Linux, Mac OS)?
+- Mô hình client - server với PHP (khách - chủ)
+- PHP là gì?
++ Là ngôn ngữ lập trình chuyên dùng để phát triển web
++ Hypertext Preprocessor
++ PHP có nhiều phiên bản, mới nhất 8.x
++ PHP là mã nguồn mở, chủ động truy cập tài nguyên và
+sử dụng 1 cách miễn phí
++ Có thể tích hợp nhiều cơ sở dữ liệu khác nhau: MySQL
+SQL Server ...
++ 1 website viết bằng PHP ko mất bất cứ 1 chi phí nào
++ Code PHP bắt buộc phải viết vào file có phần mở rộng
+là .php
+- PHP có thể xử lý gì:
+TẤt cả các chức năng trên các website thì PHP đều có
+thể xử lý: đăng nhập, giỏ hàng, thanh toán ...
+- Các tính chất cơ bản của PHP
+- KHai báo vùng làm việc với PHP:
++ Bắt buộc phải tạo file .php
++ Bắt buộc phải đặt file .php này trong thư mục
+htdocs của XAMPP
+- Vào thư mục C:/xampp/htdocs/
+                             /manhnv/test.php
+                             /doandu/
+PHPStorm -> menu File -> New Project
