@@ -1,0 +1,81 @@
+note.txt
+1 / Giảng viên
+- Nguyễn Viết Mạnh
+- 32 tuổi
+- Hoài đức hà nội
+- Làm việc VMO
+2 / Cấu trúc tài liệu của mỗi ngày học:
+- Day01_....
+            /Code_demo: chứa các file code trên lớp
+                      /Draft: chứa file code mẫu của buổi học
+            /Slides: chứa các slide buổi học nếu có
+            /Bai_tap_ve_nha:
+- Link lưu trữ tài liệu của lớp:
+https://github.com/nguyenvietmanhit/php0422e3
+
+3/ Giới thiệu về Git
+- Là công cụ giúp quản lý source code và code nhóm
+- Git bắt buộc phải biết trong môi trường doanh nghiệp
+- Quản lý source code: khá giống Google Drive
+- Code nhóm: 3 ng code 1 web PHP
++ A code login
++ B code register
++ C code forget password
+4/ Chốt 18h15 học
+5/ Công việc code thực tế:
++ Thuật ngữ level của coder:
+Thực tập sinh: internship
+Fresher:
+Junior:
+Senior:
+Technical Leader:
+PM
++ Nữ có nên học code hay ko ?
+Bình đẳng như nam
++ Ổn định
+
+5/ Tổng quan về PHP
+- Môi trường phát triển Web với PHP: 3 thành phần chính
++ Webserver: là thư mục chứa code website của bạn, có
+2 phần mềm chạy webserver: Apache và Nginx
+Thuê hosting/vps
++ PHP Engine: Trình xử lý mã nguồn PHP
++ Cơ sở dữ liệu: là nơi lưu trữ dữ liệu, website động
+-> nếu muốn code PHP bắt buộc phải cài 3 thành phần trên
+-> cài 1 phần mềm từ bên thứ 3 -> XAMPP, WAMPP, LAMPP
+Thực tế: Docker
+
+6 / Mô hình Client - Server trong Web
+http/https
+
+7/ PHP là gì
++ Hypertext Preprocessor
++ Là ngôn ngữ lập trình Web
++ Có nhiều phiên bản: 8.x, 7.x, 5.x
++ Tích hợp nhiều CSDL: MySQL, Oracle, SQL Server, SQL Lite
+, Mongo DB; thông dụng nhất với PHP luôn luôn là MySQL
++ Là mã nguồn mở: hoàn toàn free và có thể chỉnh sửa
+đc mã nguồn
++ Lợi thế rất lớn của PHP khi làm web so với các ngôn
+ngữ làm web -> free
++ PHP là ngôn ngữ phân biệt hoa thường
+name
+naMe
++ File PHP có phần mở rộng là .php
+8/ Chương trình PHP đầu tiên:
+Code chức năng hiển thị ngày giờ hiện tại
+- Bật server - XAMPP lên: start Apache + MySQL
+- Code PHP bắt buộc phải đặt trong thư mục htdocs khi
+cài XAMPP
+Tạo 1 cấu trúc thư mục như sau:
+C:/xampp/htdocs/php0422e2_demo/manhnv.php
+- Một số lệnh cơ bản: dùng cmd, git bash, cmder
++  cd \   -> về ổ gốc từ đường dẫn hiện tại
+(change directory)
++  D:     -> chuyển ổ
++  mkdir php0422e3_demo -> tạo thư mục
++  echo "" > manhnv.php -> tạo file manhnv.php
+- Dùng PHPStorm / Visual Code mở thư mục gốc chứa file
+.php cần code lên
+C:/xampp/htdocs/php0422e3_demo/manhnv.php, thư mục
+gốc là thư mục nằm ngay dưới htdocs của XAMPP
