@@ -84,4 +84,6 @@ $number *= 3; //$number = $number * 3 = 9
 $number /= 3; //number = number / 3 = 3
 // Chia lấy dư tích lũy %=
 $number %= 2; //number = number % 2 = 1
+
+
 ?>
