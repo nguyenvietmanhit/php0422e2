@@ -1,0 +1,15 @@
+command.txt
+Giới thiệu 1 số lệnh cơ bản thao tác với
+thư mục và file: dùng cmd, cmder
+- Di chuyển tới thư mục:
+cd \   -> di chuyển về ổ gốc từ đường dẫn hiện tại
+(change directory)
+- Chuyển ổ:
+D:   -> chuyển sang ổ D
+- Tạo mới thư mục:
+mkdir php0422e2_test  -> tạo thư mục (make directory)
+- Tạo file:
+echo "hello manhnv" > manhnv.txt -> tạo file manhnv.txt,
+với nội dung = hello manhnv
+- Quay lại câu lệnh trước đó: mũi tên lên
+- Tới câu lệnh kế tiếp: mũi tên xuống
