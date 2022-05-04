@@ -56,31 +56,77 @@ if (isset($_GET['submit'])) {
     }
 }
 // - B7: Hiển thị error và result ra form
+// - B8: Đổ lại dữ liệu đã nhập ra form
 ?>
 <h3 style="color: red"><?php echo $error; ?></h3>
 <h3 style="color: green"><?php echo $result; ?></h3>
 <form action="" method="get">
     Nhập email:
-    <input type="text" name="email" value="" />
+    <input type="text" name="email"
+value="<?php echo isset($_GET['email']) ? $_GET['email'] : '' ?>" />
     <br />
     Chọn giới tính:
 <!--  Với radio, cần set value cho từng radio  -->
-    <input type="radio" name="gender" value="0" /> Nữ
-    <input type="radio" name="gender" value="1" /> Nam
-    <input type="radio" name="gender" value="2" /> Khác
+    <?php
+    // Có bao nhiều radio tạo bấy nhiêu biến để lưu giá trị
+    //checked
+    $checked_female = '';
+    $checked_male = '';
+    $checked_another = '';
+    if (isset($_GET['gender'])) {
+        $gender = $_GET['gender'];
+        switch ($gender) {
+            case 0: $checked_female = 'checked';break;
+            case 1: $checked_male = 'checked';break;
+            case 2: $checked_another = 'checked';
+        }
+    }
+    ?>
+    <input <?php echo $checked_female; ?> type="radio" name="gender" value="0" /> Nữ
+    <input <?php echo $checked_male?> type="radio" name="gender" value="1" /> Nam
+    <input <?php echo $checked_another; ?> type="radio" name="gender" value="2" /> Khác
     <br />
     Chọn nghề nghiệp:
 <!--  Với checkbox nếu có từ 2 checkbox trở lên thì
   bắt buộc phải set name ở dạng mảng, cũng cần set value-->
-    <input type="checkbox" name="jobs[]" value="0" />Dev
-    <input type="checkbox" name="jobs[]" value="1" />Tester
-    <input type="checkbox" name="jobs[]" value="2" />PM
+    <?php
+    $checked_dev = '';
+    $checked_tester = '';
+    $checked_pm = '';
+    if (isset($_GET['jobs'])) {
+        $jobs = $_GET['jobs'];
+        foreach ($jobs AS $job) {
+            switch ($job) {
+                case 0: $checked_dev = 'checked';break;
+                case 1: $checked_tester = 'checked';break;
+                case 2: $checked_pm = 'checked';
+            }
+        }
+    }
+    ?>
+    <input <?php echo $checked_dev; ?> type="checkbox" name="jobs[]" value="0" />Dev
+    <input <?php echo $checked_tester; ?> type="checkbox" name="jobs[]" value="1" />Tester
+    <input <?php echo $checked_pm; ?> type="checkbox" name="jobs[]" value="2" />PM
     <br />
     Chọn quốc gia:
+    <?php
+    // Xử lý select giống hệt radio
+    $selected_vn = '';
+    $selected_jp = '';
+    $selected_kr = '';
+    if (isset($_GET['country'])) {
+        $country = $_GET['country'];
+        switch ($country) {
+            case 0; $selected_vn = 'selected';break;
+            case 1; $selected_jp = 'selected';break;
+            case 2; $selected_kr = 'selected';
+        }
+    }
+    ?>
     <select name="country">
-        <option value="0">VN</option>
-        <option value="1">JP</option>
-        <option value="2">KR</option>
+        <option <?php echo $selected_vn; ?> value="0">VN</option>
+        <option <?php echo $selected_jp; ?> value="1">JP</option>
+        <option <?php echo $selected_kr; ?> value="2">KR</option>
     </select>
     <br />
     <input type="submit" name="submit" value="Show thông tin" />
