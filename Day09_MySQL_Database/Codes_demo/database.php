@@ -17,4 +17,5 @@
  * - Dev cần phải biết viết câu truy vấn SQL để tương tác với
  * CSDL MySQL
  * - Cài MySQL: cài XAMPP
+ *
  */
