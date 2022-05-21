@@ -122,4 +122,41 @@ USE php0422e2;
     DELETE FROM products WHERE id > 9;
     # Chú ý: luôn phải set điều kiện khi delete, nếu ko
     # sẽ xóa toàn bộ bảng
+    # 10 - SELECT sử dụng JOIN
+    # Thực tế cần lấy dữ liệu từ nhiều bảng có mối quan hệ
+    # VD: lấy tất cả sp kèm theo tên danh mục tương ứng của sp đó, sửa category_id = null của sp có id = 6
+    # Có 3 kiểu join chính:
+    # INNER
+    # Khi sử dụng join luôn phải có tên bảng trước tên trường
+    # Cơ chế INNER JOIN: lặp qua từng bản ghi của bảng gốc (products), mỗi lần lặp qua tìm bản ghi tương ứng trong bảng đc join (categories), nếu tìm thấy thì trả về, ngược lại ko trả về -> đảm bảo tính toàn vẹn của dữ liệu
+    SELECT products.*, categories.name AS category_name
+    FROM products
+    INNER JOIN categories
+    ON products.category_id = categories.id
+    WHERE products.id != 100;
+    # LEFT
+    # Cơ chế LEFT JOIN: lặp qua từng bản ghi của bảng gốc (products), mỗi lần lặp qua tìm bản ghi tương ứng trong bảng đc join (categories), nếu tìm thấy thì trả về, ngược lại vẫn trả về tuy nhiên giá trị ko tìm thấy sẽ bị null
+    SELECT products.*, categories.name
+    FROM products
+    LEFT JOIN categories
+    ON products.category_id = categories.id;
+    # RIGHT
+    SELECT products.*, categories.name
+    FROM products
+    RIGHT JOIN categories
+    ON products.category_id = categories.id;
+    # 11 - Hàm COUNT: dùng khi SELECT, đếm số bản ghi dựa theo trường:
+    # Đếm số sp đang có:
+    SELECT COUNT(id) AS total_product FROM products;
+    # 12 - Hàm MIN, MAX, AVG, SUM:
+    SELECT MIN(price) AS min_price FROM products;
+    # 13 - GROUP BY: nhóm theo cột, tính toán trên nhóm
+    # Đếm các sản phẩm trùng giá:
+    SELECT COUNT(id) AS count_product, price
+    FROM products GROUP BY price;
+    # 14 - Export và Import CSDL sử dụng PHPMyadmin
+    # Export: sử dụng chúc năng Export của PHPAdmin
+    # Import: tạo CSDL rỗng, dùng chức năng Import
+
+
 
