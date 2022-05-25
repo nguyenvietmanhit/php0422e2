@@ -1,6 +1,7 @@
 <!--create.php-->
 <!--Bảng categories: id, name, description, created_at-->
 <?php
+session_start();
 require_once 'connection.php';
 // XỬ LÝ FORM:
 // B1: Debug:
@@ -30,7 +31,13 @@ if (isset($_POST['submit'])) {
         VALUES('$name', '$description')";
         // - Thực thi truy vấn: INSERT trả về boolean
         $is_insert = mysqli_query($connection, $sql_insert);
-        var_dump($is_insert);
+        if ($is_insert) {
+            // Chuyển hướng về trang danh sách
+            $_SESSION['success'] = 'Thêm mới thành công';
+            header('Location: index.php');
+            exit();
+        }
+        $error = 'Thêm mới thất bại';
     }
 }
 // B7: Hiển thị error và result ra form
