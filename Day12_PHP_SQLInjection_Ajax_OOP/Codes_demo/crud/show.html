@@ -1,0 +1,41 @@
+<!--crud/show.html-->
+<!--<script src="jquery-3.5.1.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<a href="#" id="click-ajax">
+  Click để lấy danh sách danh mục
+</a>
+<div id="result" style="border: 1px solid red;">
+  Danh sách hiển thị tại đây
+</div>
+
+<script>
+  // Ajax
+  // - Asynchronous Javascript and XML
+  // - Là kỹ thuật giúp tạo Web theo kiểu ko đồng bộ. PHP là ngôn
+  //ngữ đồng bộ. Web ko đồng bộ có tốc độ tải trang nhanh
+  // - Sử dụng Ajax: Javascript thuần, thư viện jQuery
+  // - Sử dụng thư viện jQuery để gọi Ajax cho đơn giản
+  // jquery.min.js
+  $(document).ready(function() {
+    // alert('hello');
+    // - Click vào link thì sẽ ajax:
+    // Hàm callback: là hàm đc thực thi sau khi sự kiện trc nó
+    //xảy ra
+    $('#click-ajax').click(function() {
+      // alert('click');
+      $.ajax({
+        // Url gửi ajax lên
+        url: 'index.php',
+        // Phương thức gửi dữ liệu: get, post, put, delete
+        method: 'post',
+        // Dữ liệu gửi lên
+        data: {fullname: 'manhnv', age: 32},
+        // Nơi nhận dữ liệu trả về từ url
+        success: function(data) {
+          // console.log(data);
+          $('#result').html(data);
+        }
+      });
+    });
+  });
+</script>
