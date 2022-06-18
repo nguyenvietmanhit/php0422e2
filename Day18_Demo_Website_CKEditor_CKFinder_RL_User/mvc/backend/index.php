@@ -46,3 +46,21 @@ $obj->$action();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// Copy 3 file sau từ Day17 sang D18 tương ứng:
+// D17/mvc/backend/controllers/CategoryController.php -> Day18
+// D17/mvc/backend/views/categories/create.php -> Day18
+// D17/mvc/backend/views/layouts/main.php -> Day18
+// Sửa tên thư mục ckfinder phù hợp dựa theo PHP
+// backend/assets/ckfinder_php.8.x -> ckfinder
