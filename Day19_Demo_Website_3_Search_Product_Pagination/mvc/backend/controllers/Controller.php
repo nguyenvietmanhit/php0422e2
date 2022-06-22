@@ -1,7 +1,22 @@
 <?php
-
+// mvc/backend/controllers/Controller.php
 class Controller
 {
+    public function __construct() {
+        // - Nếu chưa đăng nhập thì chặn truy cập vào trang quản
+        //trị, loại trừ chức năng mà ko y êu cầu đăng nhập là
+        // login và register
+        $controller = $_GET['controller'];
+        $action = $_GET['action'];
+        if (!isset($_SESSION['user'])
+        && $controller != 'user'
+        && !in_array($action, ['login', 'register'])) {
+            $_SESSION['error'] = 'Bạn chưa đăng nhập';
+            header('Location: index.php?controller=user&action=login');
+            exit();
+        }
+    }
+
     //chứa nội dung view
     public $content;
     //chứa nội dung lỗi validate

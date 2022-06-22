@@ -13,4 +13,7 @@
  * models/User.php
  * views/users/register.php
  *            /login.php
+ * - Chức năng tim kiếm sản phẩm:
+ * + Tương đối, truy vấn  SELECT với điều kiện LIKE
+ * + Thường nằm chung màn hình với liệt kê
  */

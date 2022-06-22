@@ -72,7 +72,8 @@ của ứng dụng: copy mockup_html/backend/index.html ->main.php
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="index.php?controller=user&action=logout"
+                                       class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>

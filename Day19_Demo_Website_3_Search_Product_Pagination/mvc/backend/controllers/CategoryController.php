@@ -4,6 +4,8 @@ require_once 'controllers/Controller.php';
 class CategoryController extends Controller {
     //index.php?controller=category&action=create
     public function create() {
+        // - Logic chặn
+
         // - Controller gọi View để hiển thị giao diện
         $this->page_title = 'Form thêm mới danh mục';
         $this->content =
