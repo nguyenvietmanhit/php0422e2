@@ -1,0 +1,18 @@
+# mvc/frontend/.htacess
+# - Là file nhạy cảm, ko sửa file này nếu như ko biết
+# về nó
+# - File này có thể dùng để cấu hình truy cập vào
+# trang và rewrite url
+RewriteEngine On
+# Rewrite url trang Giỏ hàng của bạn:
+RewriteRule gio-hang-cua-ban.html index.php?controller=cart&action=index
+# Rewrite url Xóa sản phẩm khỏi giỏ hàng: có 1 tham số động
+# là id của sp -> Biểu thức chính quy (Regular Expression)
+# /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+
+RewriteRule xoa-san-pham/([0-9]{1,}).html index.php?controller=cart&action=delete&id=$1
+# - Rewrite url Chi tiết sp: có 2 tham số động là tên sp và id sp:
+RewriteRule san-pham/(.*)/([0-9]{1,}).html index.php?controller=product&action=detail&slug=$1&id=$2
+# - Rewrite thanh toán
+RewriteRule thanh-toan.html index.php?controller=payment&action=index
+
+

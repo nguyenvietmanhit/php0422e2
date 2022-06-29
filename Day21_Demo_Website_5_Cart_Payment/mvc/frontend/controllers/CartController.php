@@ -2,7 +2,6 @@
 //controllers/CartController.ph
 require_once 'controllers/Controller.php';
 require_once 'models/Product.php';
-
 class CartController extends Controller
 {
     public function add() {
@@ -40,5 +39,44 @@ class CartController extends Controller
         echo '<pre>';
         print_r($_SESSION['cart']);
         echo '</pre>';
+    }
+
+    public function index() {
+        // - Controller xử lý submit form - cập nhật giỏ hàng:
+        echo '<pre>';
+        print_r($_POST);
+        echo '</pre>';
+        if (isset($_POST['submit'])) {
+            // Cập nhật số lượng mới cho các sp trong giỏ:
+            foreach ($_SESSION['cart'] AS $product_id => $cart_item) {
+                // Xử lý số lượng là số âm:
+                if ($_POST[$product_id] < 0) {
+                    $_SESSION['error'] = "Số lượng ko thể âm";
+                    header('Location: gio-hang-cua-ban.html');
+                    exit();
+                }
+                $_SESSION['cart'][$product_id]['quantity']
+                    = $_POST[$product_id];
+            }
+            $_SESSION['success'] = 'Cập nhật giỏ thành công';
+        }
+
+        // - Controller gọi View:
+        $this->page_title = 'Giỏ hàng của bạn';
+        $this->content = $this->render('views/carts/index.php');
+        require_once 'views/layouts/main.php';
+    }
+
+    public function delete() {
+        echo '<pre>';
+        print_r($_GET);
+        echo '</pre>';
+        $product_id = $_GET['id'];
+        unset($_SESSION['cart'][$product_id]);
+        $_SESSION['success'] = 'Xóa sp khỏi giỏ thành công';
+        header('Location: gio-hang-cua-ban.html');
+        exit();
+        // thanh-toan.html
+        //san-pham/abc/5.html
     }
 }

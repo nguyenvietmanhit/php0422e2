@@ -22,3 +22,15 @@ $_SESSION['cart'] = [
         'quantity' => 1
     ],
 ];
+
+// gio-hang-cua-ban.html
+// - Rewrite URL: là tính năng viết lại đường dẫn thân thiện
+//với user thay vì dùng đường dẫn của MVC
+// Sử dụng file .htaccess để rewrite url
+
+//https://vnexpress.net/sau-nam-hoat-dong-cua-tuyen-brt-ha-noi-4481362.html
+#xoa-san-pham/7.html
+// - Chức năng thanh toán:
+// + Lưu vào 2 bảng theo đúng thứ tự sau:
+// Bảng orders
+// Bảng order_details
