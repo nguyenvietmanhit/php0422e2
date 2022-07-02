@@ -1,0 +1,10 @@
+/* public/css/style.css */
+header {
+    background: red;
+}
+main {
+    border: 1px solid yellow;
+}
+footer {
+    background: blue;
+}
