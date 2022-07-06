@@ -33,3 +33,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// - Route liệt kê sp
+Route::get('danh-sach-sp',
+    [ProductController::class, 'index']);
+
+// - Route hiển thị form cập nhật:
+Route::get('sua-sp/{id}', [ProductController::class, 'edit']);
